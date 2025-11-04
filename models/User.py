@@ -1,3 +1,4 @@
+import json
 class User:
     """
     This class represents an common virtual user with some attributes and actions.
@@ -11,7 +12,7 @@ class User:
         mail: str, must contains "@" format.
         password: str, len > 8 and < 21
         
-    Meth:
+    Meths:
         object.getAttribute() -> returns attribute.
         object.setAttribute(object, value) -> update attribute.
         object.show() -> shows all attributes.
@@ -91,3 +92,26 @@ class User:
         print(f"Name: " + self.name)
         print(f"Mail: " + self.mail)
         print(f"Password: " + self.password)
+        
+    # ----------- JSON MODULE (TRYING) --------------- #
+    
+    def formatear(self):
+        formato = { 
+            "document" : self.document,
+            "name" : self.name,
+            "mail" : self.mail,
+            "password" : self.password
+        }
+        return formato
+    
+    def addUser(self, archivo="data/usuarios.json"):
+        try:
+            with open(archivo, "r", encoding="utf-8") as f:
+                usuarios = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            usuarios = []
+            
+        usuarios.append(self.formatear())
+
+        with open(archivo, "w", encoding="utf-8") as f:
+            json.dump(usuarios, f, indent=4)
