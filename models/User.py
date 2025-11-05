@@ -19,10 +19,10 @@ class User:
         
     """
     
-    document = "Undefined"
-    name = "No registered"      # This values are for default
-    mail = "No provided"    
-    password = "No assigned"
+    document = "Unknow"
+    name = "Unknow"      # This values are for default
+    mail = "Unknow"    
+    password = "Unknow"
     
     def __init__(self, document, name, mail, password):     # Constructor method to create an instance
         self.document = document
@@ -87,7 +87,7 @@ class User:
 
     # Show all attributes value
     
-    def show(self):
+    def showUser(self):
         print(f"Document: " + self.document)
         print(f"Name: " + self.name)
         print(f"Mail: " + self.mail)
@@ -104,14 +104,4 @@ class User:
         }
         return formato
     
-    def addUser(self, archivo="data/usuarios.json"):
-        try:
-            with open(archivo, "r", encoding="utf-8") as f:
-                usuarios = json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError):
-            usuarios = []
-            
-        usuarios.append(self.formatear())
-
-        with open(archivo, "w", encoding="utf-8") as f:
-            json.dump(usuarios, f, indent=4)
+    
