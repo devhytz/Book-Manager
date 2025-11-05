@@ -15,7 +15,7 @@ class User:
     Meths:
         object.getAttribute() -> returns attribute.
         object.setAttribute(object, value) -> update attribute.
-        object.show() -> shows all attributes.
+        object.showUser() -> shows all attributes.
         
     """
     
@@ -95,13 +95,13 @@ class User:
         
     # ----------- JSON MODULE (TRYING) --------------- #
     
-    def formatear(self):
-        formato = { 
+    def userFormater(self):
+        formated = { 
             "document" : self.document,
             "name" : self.name,
             "mail" : self.mail,
             "password" : self.password
         }
-        return formato
+        return formated
     
     
