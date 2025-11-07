@@ -9,4 +9,4 @@ secondUser = User("30338037", "Paulas", "paulita@gmail.com", "paulka13")
 
 firstBook = Book("0123456789", "Holahola", "Alejandro", 40000, 1.3)
 
-controller.add_user(secondUser)
+controller.update_user(secondUser)
