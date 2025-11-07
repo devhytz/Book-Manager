@@ -1,4 +1,3 @@
-import json
 class User:
     """
     This class represents an common virtual user with some attributes and actions.
@@ -85,23 +84,4 @@ class User:
         else:
             raise ValueError("Password must contain letters and numbers")
 
-    # Show all attributes value
-    
-    def showUser(self):
-        print(f"Document: " + self.document)
-        print(f"Name: " + self.name)
-        print(f"Mail: " + self.mail)
-        print(f"Password: " + self.password)
         
-    # ----------- JSON MODULE (TRYING) --------------- #
-    
-    def userFormater(self):
-        formated = { 
-            "document" : self.document,
-            "name" : self.name,
-            "mail" : self.mail,
-            "password" : self.password
-        }
-        return formated
-    
-    

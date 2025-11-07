@@ -84,27 +84,5 @@ class Book:
         else:
             raise ValueError("Weight must be between 0.001 (LB) and 8(KG)")
         
-    # Show all attributes value
-    
-    def showBook(self):
-        print(f"ISBN: " + self.isbn)
-        print(f"Title: " + self.title)
-        print(f"Autor: " + self.autor)
-        print(f"Value: $",  self.value)
-        print(f"Weight: ", self.weight)
-    
-    # ----------- JSON MODULE (TRYING) --------------- #
-    
-    def bookFormater(self):
-        formated = { 
-            "isbn" : self.isbn,
-            "title" : self.title,
-            "autor" : self.autor,
-            "value" : self.value,
-            "weight" : self.weight
-        }
-        return formated
-    
-    # MENU'S CLASS
     
     

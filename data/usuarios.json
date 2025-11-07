@@ -1,14 +1,5 @@
-[
-    {
-        "document": "1054862574",
-        "name": "Alejandro",
-        "mail": "alejrios90@gmail.com",
-        "password": "alejo123"
-    },
-    {
-        "document": "30338037",
-        "name": "Paulas",
-        "mail": "paulita@gmail.com",
-        "password": "paulka13"
-    }
-]
+{
+    "document": "1054862574",
+    "name": "Alejandro",
+    "mail": "alejrios90@gmail.com"
+}
