@@ -4,6 +4,8 @@ from km.models.User import User
 
 class UserController:
     
+    # route = "data/users.json"
+    
     def show_user(self, user):
         print(f"Document: {user.document}")
         print(f"Name: {user.name}")
@@ -13,15 +15,35 @@ class UserController:
     
     # Añadir Usuario
     
-    def add_user(self, user):
-        #pasarlo a formato json
-        format = {
-            "document" : user.document,
-            "name" : user.name,
-            "mail" : user.mail
-        }
+    def search_user(self, user):
+        user_list = []
         
-        #abrir archivo
-        with open("data/usuarios.json", "w") as file:
+        with open("data/users.json", "r") as file:
+            user_list = json.load(file)
+        
+        for u in user_list:
+           if u['document'] == user.document:
+                print("existo")
+                return True
+        print("no existo")
+        return False   
+                
+           
+    
+    def add_user(self, new_user):
+        self.search_user(new_user)
+        
+        #pasarlo a formato json
+        format = [{
+            "document" : new_user.document,
+            "name" : new_user.name,
+            "mail" : new_user.mail
+        }]
+        
+        #añadir usuario
+        with open("data/users.json", "w") as file:
             json.dump(format, file, indent=4)
+    
+    
+       
         
